@@ -2,6 +2,6 @@
   "templates": {
     "primer_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!",
     "segundo_recordatorio": "Estimado/a cliente,\n\nLe informamos que su póliza *{poliza}* presenta un pago pendiente con fecha límite *{vencimiento}*.\n\nLe agradecemos realizar el pago a la brevedad para evitar cualquier inconveniente en su cobertura.\n\nSi el pago ya fue efectuado, por favor ignore este mensaje.\n\nGracias por su atención.",
-    "tercer_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!"
+    "tercer_recordatorio": "Estimado/a cliente,\n\nLe informamos que su póliza *{poliza}* presenta un pago pendiente con fecha límite *{vencimiento}*.\n\nLe agradecemos realizar el pago a la brevedad para evitar cualquier inconveniente en su cobertura.\n\nSi el pago ya fue efectuado, por favor ignore este mensaje.\n\nGracias por su atención."
   }
 }

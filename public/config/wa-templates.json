@@ -1,5 +1,7 @@
 {
   "templates": {
-    "primer_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!"
+    "primer_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!",
+    "segundo_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!",
+    "tercer_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!"
   }
 }

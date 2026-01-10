@@ -1,7 +1,7 @@
 {
   "templates": {
-    "primer_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!",
-    "segundo_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!",
-    "tercer_recordatorio": "Hola *{nombre}*,\n\n*{empresa}* le recuerda:\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}* (enviado el {fecha_envio})\n\nRealice el pago aquí: {link_pago}\n\nMantenga su cobertura activa. Si ya pagó, ignore.\n\n¡Gracias!"
+    "primer_recordatorio": "Hola *{nombre}*, le recordamos el *pago pendiente de su póliza*. Por favor, contáctenos para regularizar su situación.\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}*\n\nSaludos,\n*Hermann Solera Esquivel*\nNOA Seguros",
+    "segundo_recordatorio": "*Segundo recordatorio:* Hola *{nombre}*, es importante que regularice el pago de su póliza a la brevedad posible.\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}*\n\nSaludos,\n*Hermann Solera Esquivel*\nNOA Seguros",
+    "tercer_recordatorio": "*Recordatorio final:* Hola *{nombre}*, por favor contáctenos urgentemente para regularizar el pago de su póliza.\n\nPóliza: *{poliza}*\nMonto: *{monto}*\nVencimiento: *{vencimiento}*\n\nSaludos,\n*Hermann Solera Esquivel*\nNOA Seguros"
   }
 }

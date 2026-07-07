@@ -1,0 +1,54 @@
+// Override de funciones para usar Supabase
+(function() {
+  window.addEventListener('load', async function() {
+    console.log('NOA con Supabase iniciado');
+    
+    window.guardarDatos = async function() {
+      try {
+        if (!window.datosReales || window.datosReales.length === 0) {
+          return;
+        }
+        const result = await guardarClientesSupabase(window.datosReales);
+        if (result.success) {
+          console.log('Datos guardados');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    
+    window.cargarDatos = async function() {
+      try {
+        if (window.datosReales && window.datosReales.length > 0) {
+          console.log('Datos ya cargados, no recargar');
+          return;
+        }
+        const result = await cargarClientesSupabase();
+        if (result.success && result.clientes.length > 0) {
+          window.datosReales = result.clientes;
+          window.archivoCargado = true;
+          if (window.actualizarSemaforo) window.actualizarSemaforo();
+          if (window.NOA_RENDER_CARTERA) {
+            window.NOA_RENDER_CARTERA({ cols: 
+Object.keys(result.clientes[0] || {}), data: result.clientes });
+          }
+          if (window.actualizarEstadisticas) 
+window.actualizarEstadisticas();
+          if (window.actualizarTodosLosIndicadores) 
+window.actualizarTodosLosIndicadores();
+          if (window.actualizarComparativoCobros) 
+window.actualizarComparativoCobros();
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    
+    setTimeout(async () => {
+      const user = await getUserNOA();
+      if (user) {
+        await window.cargarDatos();
+      }
+    }, 2000);
+  });
+})();

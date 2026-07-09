@@ -116,7 +116,13 @@ window.enviarAhora = async function(index) {
   const email = cliente.correo || cliente['Correo electrónico 1'] || cliente.Email || '';
   const telefono = String(cliente.telefono || cliente['Teléfono'] || cliente.Telefono || '').replace(/[^0-9]/g, '');
   const poliza = cliente.poliza || cliente['# Póliza'] || cliente.Póliza || '';
-  const monto = cliente.moneda === 'USD' ? '$' + (cliente.prima || 0) : '₡' + (cliente.prima || 0);
+  
+  // Normalizar moneda para detectar USD/Dólares correctamente
+  const monedaRaw = String(cliente.moneda || 'CRC').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const esUSD = monedaRaw.includes('usd') || monedaRaw.includes('dolar') || monedaRaw === '$';
+  const simboloMoneda = esUSD ? '$' : '₡';
+  const monto = simboloMoneda + (cliente.prima || 0);
+  
   const vencimiento = cliente.hasta || 'N/A';
   const clienteId = cliente.id;
   

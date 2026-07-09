@@ -168,13 +168,18 @@
             
             if (info.canal === 'whatsapp') {
                 if (window.enviarWAIndividual) {
+                    // Normalizar moneda
+                    const monedaNorm = String(cliente.moneda || 'CRC').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                    const esUSD = monedaNorm.includes('usd') || monedaNorm.includes('dolar');
+                    const simbolo = esUSD ? '$' : '₡';
+                    
                     const result = await window.enviarWAIndividual(
                         cliente.telefono,
 `Estimado/a ${cliente.asegurado},
 
 Le recordamos que su póliza *${cliente.poliza || 'N/A'}* vence en *${info.diasRestantes} días* (${cliente.hasta || ''}).
 
-💰 Prima: ${cliente.moneda === 'USD' ? '$' : '₡'}${cliente.prima || '0'}
+💰 Prima: ${simbolo}${cliente.prima || '0'}
 🏢 Aseguradora: ${cliente.aseguradora || ''}
 
 Por favor contáctenos para coordinar el pago y mantener su cobertura activa.

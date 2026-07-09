@@ -40,10 +40,11 @@
     
     // Monto: buscar Prima Aseguradora o monto
     let monto = cliente['Prima Aseguradora'] || cliente.prima || cliente.monto || cliente.Monto || '0';
-    const moneda = cliente.moneda || cliente.Moneda || 'CRC';
+    const monedaRaw = String(cliente.moneda || cliente.Moneda || 'CRC').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const esUSD = monedaRaw.includes('usd') || monedaRaw.includes('dolar');
     if (typeof monto === 'number' || !isNaN(parseFloat(monto))) {
       const num = parseFloat(String(monto).replace(/[^\d.-]/g, '')) || 0;
-      monto = moneda === 'USD' ? '$' + num.toFixed(2) : '₡' + num.toLocaleString('es-CR', {maximumFractionDigits: 0});
+      monto = esUSD ? '$' + num.toFixed(2) : '₡' + num.toLocaleString('es-CR', {maximumFractionDigits: 0});
     }
     
     // Fecha de vencimiento: buscar 'Vigencia hasta' u otra columna de fecha

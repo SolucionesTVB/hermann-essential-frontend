@@ -152,7 +152,7 @@ window.confirmarRestaurar = function(clienteId, nombre) {
       if (fila) fila.remove();
       var resultado = await window.cargarClientesSupabase();
       if (resultado.success) {
-        window.datosReales = resultado.clientes;
+        window.datosReales = typeof normalizarLote === "function" ? normalizarLote(resultado.clientes) : resultado.clientes;
         if (typeof window.renderizarCartera === 'function') window.renderizarCartera();
         if (typeof window.actualizarDashboard === 'function') window.actualizarDashboard();
       }

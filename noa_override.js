@@ -35,7 +35,7 @@
               if (window._datosRealesBackup) {
                 window._datosRealesBackup = reload.clientes;
               } else {
-                window.datosReales = reload.clientes;
+                window.datosReales = typeof normalizarLote === "function" ? normalizarLote(reload.clientes) : reload.clientes;
               }
               console.log('IDs sincronizados desde Supabase:', reload.clientes.length);
               if (typeof window.renderizarCartera === 'function') window.renderizarCartera();

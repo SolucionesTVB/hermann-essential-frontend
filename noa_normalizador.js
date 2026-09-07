@@ -139,7 +139,7 @@
         
         // Si viene de Supabase (ya tiene user_id o campos normalizados), no reprocesar
         if (d.user_id || (d.asegurado && d.poliza && d.hasta && !d['Nombre del Tomador'])) {
-            return d;
+            d._pagado = d._pagado || d.pagado || false; return d;
         }
         
         const resultado = { ...d };  // Mantener campos originales

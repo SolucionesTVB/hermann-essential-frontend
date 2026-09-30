@@ -45,8 +45,8 @@ window.actualizarDesdeExcel = async function(file) {
           
           const cambios = {};
           
-          if (row['Email'] || row.email || row.Email) {
-            cambios.correo = row['Email'] || row.email || row.Email;
+          if (row['Correo Cliente'] || row['Email'] || row.correo || row.email) {
+            cambios.correo = row['Correo Cliente'] || row['Email'] || row.correo || row.email;
           }
           
           if (row['Celular'] || row.celular || row.Celular) {
@@ -61,8 +61,28 @@ window.actualizarDesdeExcel = async function(file) {
             cambios.desde = row['Desde'] || row.desde;
           }
           
-          if (row['Hasta'] || row.hasta) {
-            cambios.hasta = row['Hasta'] || row.hasta;
+          if (row['Fecha Hasta'] || row['Hasta'] || row.hasta) {
+
+          if (row['Moneda'] || row.moneda) {
+            cambios.moneda = row['Moneda'] || row.moneda;
+          }
+
+          if (row['Período Pago'] || row['Periodicidad'] || row.periodicidad) {
+            cambios.periodicidad = row['Período Pago'] || row['Periodicidad'] || row.periodicidad;
+          }
+
+          if (row['Aseguradora'] || row.aseguradora) {
+            cambios.aseguradora = row['Aseguradora'] || row.aseguradora;
+          }
+
+          if (row['Placa/Folio'] || row['Placa'] || row.placa) {
+            cambios.placa = row['Placa/Folio'] || row['Placa'] || row.placa;
+          }
+
+          if (row['Nombre del Tomador'] || row['Asegurado'] || row.asegurado) {
+            cambios.asegurado = row['Nombre del Tomador'] || row['Asegurado'] || row.asegurado;
+          }
+            cambios.hasta = row['Fecha Hasta'] || row['Hasta'] || row.hasta;
           }
           
           if (Object.keys(cambios).length === 0) {

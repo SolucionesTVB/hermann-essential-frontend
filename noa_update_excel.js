@@ -27,7 +27,7 @@ window.actualizarDesdeExcel = async function(file) {
       
       for (const row of jsonData) {
         try {
-          const poliza = row['Póliza'] || row.poliza || row.Poliza;
+          const poliza = row['Número de Póliza'] || row['Póliza'] || row.poliza || row.Poliza;
           
           if (!poliza) {
             console.warn('⚠️ Fila sin póliza, saltando:', row);
